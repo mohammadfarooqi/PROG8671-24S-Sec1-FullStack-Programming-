@@ -1,5 +1,6 @@
 const express = require('express');
 const expressSession = require('express-session');
+const flash = require('connect-flash');
 
 const app = new express();
 const ejs = require('ejs');
@@ -39,6 +40,8 @@ app.use(
   })
 );
 
+app.use(flash());
+
 app.use('*', (req, res, next) => {
   loggedIn = req.session.userId;
   next();
@@ -47,7 +50,7 @@ app.use('*', (req, res, next) => {
 // MongoDB connects to our my_database db locally
 // mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true });
 mongoose.connect(
-  'mongodb+srv://mohammadfarooqi:kZyBC4wQiinAxVI9@cluster0.7mpyoua.mongodb.net/my_database',
+  'mongodb+srv://<username>:<password>@cluster0.7mpyoua.mongodb.net/my_database',
   { useNewUrlParser: true }
 );
 

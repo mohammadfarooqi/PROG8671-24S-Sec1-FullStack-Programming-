@@ -47,7 +47,7 @@ app.use('*', (req, res, next) => {
 // MongoDB connects to our my_database db locally
 // mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true });
 mongoose.connect(
-  'mongodb+srv://mohammadfarooqi:kZyBC4wQiinAxVI9@cluster0.7mpyoua.mongodb.net/my_database',
+  'mongodb+srv://<username>:<password>@cluster0.7mpyoua.mongodb.net/my_database',
   { useNewUrlParser: true }
 );
 
